@@ -1,0 +1,29 @@
+# Smart Dustbin System in Python
+
+print("===== SMART DUSTBIN SYSTEM =====")
+
+capacity = 100
+
+while True:
+    fill_level = float(input("\nEnter dustbin fill level (%): "))
+
+    if fill_level < 0 or fill_level > 100:
+        print("Invalid fill level! Enter a value between 0 and 100.")
+
+    elif fill_level >= 80:
+        print("Dustbin Status: FULL")
+        print("⚠️ Alert: Please empty the dustbin!")
+
+    elif fill_level >= 50:
+        print("Dustbin Status: HALF FULL")
+        print("Dustbin needs attention soon.")
+
+    else:
+        print("Dustbin Status: EMPTY / LOW")
+        print("No action required.")
+
+    choice = input("\nDo you want to check again? (yes/no): ")
+
+    if choice.lower() != "yes":
+        print("Smart Dustbin System Closed.")
+        break
